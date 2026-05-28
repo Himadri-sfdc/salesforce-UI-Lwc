@@ -5,7 +5,11 @@
       "default": true
     }
   ],
+<<<<<<< HEAD
   "name": "LwcProjectCrm",
+=======
+  "name": "LwcSfdcProject",
+>>>>>>> 711d42c3ac9c553b989693cbedf921986e50b710
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "66.0"
