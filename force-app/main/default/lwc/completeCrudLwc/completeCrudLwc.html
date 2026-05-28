@@ -1,0 +1,11 @@
+<template>
+
+    <!-- Update / Delete ke liye Id chahiye -->
+    <lightning-input label="Contact Id " value={contactId} onchange={handleId}></lightning-input>
+    <lightning-input label="Last Name" value={name} onchange={handleName}></lightning-input>
+    <lightning-input label="Phone" value={phone} onchange={handlePhone}></lightning-input>
+
+    <lightning-button label="Save" onclick={saveContact}></lightning-button>
+    <lightning-button label="Update" onclick={updateContact}></lightning-button>
+    <lightning-button label="Delete" variant="destructive" onclick={deleteContact}></lightning-button>
+</template>
