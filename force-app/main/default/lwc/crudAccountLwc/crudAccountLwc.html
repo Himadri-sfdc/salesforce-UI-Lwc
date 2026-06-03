@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Crud Account Using Apex">
+        <lightning-input label="Account Id" value={accountId} onchange={handleId}></lightning-input>
+        <lightning-input label="Account Name" value={accountName} onchange={handleName}></lightning-input>
+        <lightning-input label="Account Phone" value={accountPhone} onchange={handlePhone}></lightning-input>
+
+        <lightning-button label="create" onclick={createAccount}></lightning-button>
+        <lightning-button label="update" onclick={updateAccount}></lightning-button>
+        <lightning-button label="delete" onclick={deleteAccount}></lightning-button>
+    </lightning-card>
+</template>
