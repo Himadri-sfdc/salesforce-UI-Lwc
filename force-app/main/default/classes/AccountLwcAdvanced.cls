@@ -1,5 +1,6 @@
 public with sharing class AccountLwcAdvanced {
-    
+
+     @AuraEnabled(cacheable=true)          
      public static List<Account> getAccounts(String searchKey,Integer limitsize,Integer offsetSize){
         return[
             SELECT Id,Name FROM Account
