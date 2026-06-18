@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Account Data">
+
+        <lightning-datatable 
+            key-field="Id" 
+            data={accList} 
+            columns={columns} 
+            sorted-by={sortedBy}
+            sorted-direction={sortDirection} 
+            onsort={handleSort}>
+        </lightning-datatable>
+
+    </lightning-card>
+</template>
