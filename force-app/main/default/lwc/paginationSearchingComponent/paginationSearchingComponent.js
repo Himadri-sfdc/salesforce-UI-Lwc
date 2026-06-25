@@ -42,12 +42,12 @@ export default class AccountList extends NavigationMixin(LightningElement) {
             pageSize: this.pageSize,
             offsetSize: (this.pageNumber - 1) * this.pageSize
         })
-        .then(result => {
-            this.accounts = result;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+            .then(result => {
+                this.accounts = result;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }
 
     handleNext() {
@@ -64,35 +64,27 @@ export default class AccountList extends NavigationMixin(LightningElement) {
 
     handleRowAction(event) {
 
-        const actionName = event.detail.action.name;
         const row = event.detail.row;
 
-        switch (actionName) {
+        if (event.detail.action.name == 'view') {
 
-            case 'view':
-                this[NavigationMixin.Navigate]({
-                    type: 'standard__recordPage',
-                    attributes: {
-                        recordId: row.Id,
-                        objectApiName: 'Account',
-                        actionName: 'view'
-                    }
-                });
-                break;
+            this[NavigationMixin.Navigate]({
+                type: 'standard__recordPage',
+                attributes: {
+                    recordId: row.Id,
+                    actionName: 'view'
+                }
+            });
+        }
+        if (event.detail.action.name == 'edit') {
 
-            case 'edit':
-                this[NavigationMixin.Navigate]({
-                    type: 'standard__recordPage',
-                    attributes: {
-                        recordId: row.Id,
-                        objectApiName: 'Account',
-                        actionName: 'edit'
-                    }
-                });
-                break;
-
-            default:
-                break;
+            this[NavigationMixin.Navigate]({
+                type: 'standard__recordPage',
+                attributes: {
+                    recordId: row.Id,
+                    actionName: 'edit'
+                }
+            });
         }
     }
 }
